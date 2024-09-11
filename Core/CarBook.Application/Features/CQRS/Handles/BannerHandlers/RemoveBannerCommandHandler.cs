@@ -21,6 +21,7 @@ namespace CarBook.Application.Features.CQRS.Handles.BannerHandlers
         {
             var value = await _repository.GetByIdAsync(command.Id);
             await _repository.RemoveAsync(value);
+            //dasdasfasfasdf
         }
     }
 }
