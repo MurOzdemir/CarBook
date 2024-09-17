@@ -1,13 +1,8 @@
-﻿using CarBook.Application.Features.CQRS.Queries.AboutQueries;
-using CarBook.Application.Features.CQRS.Queries.BannerQueries;
-using CarBook.Application.Features.CQRS.Results.AboutResults;
+﻿using CarBook.Application.Features.CQRS.Queries.BannerQueries;
+using CarBook.Application.Features.CQRS.Results.BannerResults;
 using CarBook.Application.Intefaces;
 using CarBook.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace CarBook.Application.Features.CQRS.Handles.BannerHandlers
 {
@@ -24,12 +19,12 @@ namespace CarBook.Application.Features.CQRS.Handles.BannerHandlers
             var values = await _repository.GetByIdAsync(query.Id);
             return new GetBannerByIdQueryResult
             {
-                BannerID =values.BannerID,
+                BannerID = values.BannerID,
                 Description = values.Description,
                 Title = values.Title,
                 VideoDescription = values.VideoDescription,
                 VideoUrl = values.VideoUrl
-                              
+
             };
         }
     }

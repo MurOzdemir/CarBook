@@ -18,7 +18,7 @@ namespace CarBook.Application.Features.CQRS.Handles.BannerHandlers
         {
             _repository = repository;
         }
-        public async Task handle(CreateBannerCommand command)
+        public async Task Handle(CreateBannerCommand command)
         {
             await _repository.CreateAsync(new Banner
             {
