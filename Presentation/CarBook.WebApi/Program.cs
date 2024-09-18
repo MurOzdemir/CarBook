@@ -2,6 +2,7 @@ using CarBook.Application.Features.CQRS.Handles.AboutHandlers;
 using CarBook.Application.Features.CQRS.Handles.BannerHandlers;
 using CarBook.Application.Features.CQRS.Handles.BrandHandlers;
 using CarBook.Application.Features.CQRS.Handles.CarHandlers;
+using CarBook.Application.Features.CQRS.Handles.CategoryHandlers;
 using CarBook.Application.Intefaces;
 using CarBook.Application.Intefaces.CarInterfaces;
 using CarBook.Persistence.Context;
@@ -39,6 +40,12 @@ builder.Services.AddScoped<CreateCarCommandHandler>();
 builder.Services.AddScoped<UpdateCarCommandHandler>();
 builder.Services.AddScoped<RemoveCarCommandHandler>();
 builder.Services.AddScoped<GetCarWithBrandQueryHandler>();
+
+builder.Services.AddScoped<GetCategoryQueryHandler>();
+builder.Services.AddScoped<GetCategoryByIdQueryHandler>();
+builder.Services.AddScoped<CreateCategoryCommandHandler>();
+builder.Services.AddScoped<UpdateCategoryCommandHandler>();
+builder.Services.AddScoped<RemoveCategoryCommandHandler>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
