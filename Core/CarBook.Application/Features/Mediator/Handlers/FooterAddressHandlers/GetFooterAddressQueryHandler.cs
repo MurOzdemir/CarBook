@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace CarBook.Application.Features.Mediator.Handlers.FooterAddressHandlers
 {
-    public class GetFooterAddressQueryHandler : IRequestHandler<GetFooterAddressQuery, List<GetFooterAddressQueryResult>>
+    public class GetFooterAddressQueryHandler : IRequestHandler<GetFooterAddressQuery, List<GetFooterAddressQueryResult>>       //footer adressimizin tamamını getirilmesinde saglayan handlerimiz.
     {
         private readonly IRepository<FooterAddress> _repository;
 
