@@ -2,15 +2,11 @@
 using CarBook.Application.Intefaces;
 using CarBook.Domain.Entities;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace CarBook.Application.Features.Mediator.Handlers.FeatureHandler
 {
-    public class RemoveFeatureCommandHandler :IRequestHandler<RemoveFeatureCommand>
+    public class RemoveFeatureCommandHandler : IRequestHandler<RemoveFeatureCommand>
     {
         private readonly IRepository<Feature> _repository;
 
