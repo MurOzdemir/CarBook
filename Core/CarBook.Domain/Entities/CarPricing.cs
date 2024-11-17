@@ -12,7 +12,7 @@ namespace CarBook.Domain.Entities
         public int CarID { get; set; }
         public Car Car { get; set; }
         public int PricingID { get; set; }
-        public string Pricing { get; set; }
         public decimal Amount { get; set; }
+        public Pricing pricing { get; set; }
     }
 }

@@ -22,13 +22,26 @@ namespace CarBook.Persistence.Repositories.CarRepository
 
         public List<Car> GetCarsListWithBrands()
         {
-            var values = _context.Cars.Include(x=> x.Brand).ToList();
+            var values = _context.Cars.Include(x => x.Brand).ToList();
             return values;
+        }
+
+        public List<CarPricing> GetCarWithPricings()
+        {
+            //var values = _context.CarPricings.Include(x => x.Car).ThenInclude(y => y.Brand).Include(x => x.Pricing).ToList(); //Car sınıfından brandleri getirerek Carpringsleri listeyip pricingleri sıralar ve listeler.
+
+            var values = _context.CarPricings
+        .Include(x => x.Car)              // Car ile ilişkili veriyi getirir.
+        .ThenInclude(y => y.Brand)        // Car'ın Brand ile ilişkisini getirir.
+        .Include(x => x.pricing)          // CarPricing ile ilişkili Pricing verisini getirir.
+        .ToList();
+            return values;
+
         }
 
         public List<Car> GetLast5CarsWithBrands()
         {
-            var values =_context.Cars.Include(x => x.Brand).OrderByDescending(x=>x.CarID).Take(5).ToList();     // A'Z ye kadar  ilk 5 sıralama yapsın
+            var values = _context.Cars.Include(x => x.Brand).OrderByDescending(x => x.CarID).Take(5).ToList();     // A'Z ye kadar  ilk 5 sıralama yapsın
             return values;
 
         }
